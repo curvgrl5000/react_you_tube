@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-// this is a FUNCTIONAL component
+// this is a FUNCTIONAL component example
 // const SearchBar = () => {
 // 	return <input />;
 // };
@@ -20,19 +20,25 @@ import React from 'react';
 // }
 
 // Here's the ES6 version
-class SearchBar extends React.Component {
+class SearchBar extends Component {
 	constructor(props) {
 		super(props);  // calling the parentMethod as Inheritance 
 
-		this.state = {term: ''};
+		this.state = { term: '' };
 	}
 
-
 	render() {
-		return(
-		 <input onChange={event => this.setState({ term: event.target.value })} />; 
+		return (
+			// controlled components
+			<div>
+				<input
+				value={this.state.term} 
+				onChange={event => this.setState({ term: event.target.value })} /> 
+			</div>
+		);
 	} // single argumunets don't need the extra parens like: (event)
 }
 
 
 export default SearchBar;
+
