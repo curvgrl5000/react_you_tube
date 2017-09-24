@@ -14,13 +14,14 @@ import React from 'react';
 
 // ES6: Since we know there's a video property
 // then we can simply pass it as a single argument
-// and return the element
-const VideoListItem = ({video}) => {
+// and return the element... see below
+
+const VideoListItem = ({video, onVideoSelect}) => {
 	const imageUrl = video.snippet.thumbnails.default.url;
   //console.log(video);
 	
 	return (
-		<li className="list-group-item">
+		<li onClick={() => onVideoSelect(video)} className="list-group-item">
 			<div className="video-list media">
 				<div className="media-left">
 					<img className="media-object" src={imageUrl} />
