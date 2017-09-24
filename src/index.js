@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-DOM';
 import YTSEARCH from 'youtube-api-search';
-
 import SearchBar from './components/search_bar';
 
 const API_KEY = 'AIzaSyBqRzYXTULlNthnv52K5XO193Md1XYuZI8';
