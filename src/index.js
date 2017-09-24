@@ -3,7 +3,8 @@ import ReactDOM from 'react-DOM';
 import YTSEARCH from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 const API_KEY = 'AIzaSyBqRzYXTULlNthnv52K5XO193Md1XYuZI8';
-import VideoList from "./components/video_list";
+import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 
 // ES6 syntax of a FUNCTIONAL component example:
 class  App extends Component {
@@ -16,10 +17,10 @@ class  App extends Component {
 		// 	this.setState({ videos: videos });
 		// });
 
-  // Notice above how we're using function(data), that's not the ES6 way
-  // See below for the new syntax sugar with the fat arrow
-  // Also note that if the keys and the values are the same strings
-  // then simply note them with one argument on 'this.setState'
+	  // Notice above how we're using function(data), that's not the ES6 way
+	  // See below for the new syntax sugar with the fat arrow
+	  // Also note that if the keys and the values are the same strings
+	  // then simply note them with one argument on 'this.setState'
 
    		YTSEARCH({ key: API_KEY, term: 'surfboards'}, videos => {
 		 		this.setState({ videos });
@@ -30,6 +31,7 @@ class  App extends Component {
 		return (
 			<div>
 				<SearchBar />
+				<VideoDetail video={this.state.videos[0]} />
 				<VideoList videos={this.state.videos} />
 			</div>
 		);
