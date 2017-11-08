@@ -6,27 +6,32 @@ const API_KEY = 'AIzaSyBqRzYXTULlNthnv52K5XO193Md1XYuZI8';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 
-// ES6 syntax of a FUNCTIONAL component example:
-class  App extends Component {
+// ES6 syntax of a CLASS BASED component example, was a Functional Component:
+class App extends Component {
 	constructor(props) {
- 		super(props)
+ 		super(props);
 
  		this.state = { 
  			videos: [],
  			selectedVideo: null 
-
  		};
- 
- 		// 	YTSEARCH({ key: API_KEY, term: 'surfboards'}, function(videos) {
-		// 	this.setState({ videos: videos });
-		// });
 
-	  // Notice above how we're using function(data), that's not the ES6 way
-	  // See below for the new syntax sugar with the fat arrow
-	  // Also note that if the keys and the values are the same strings
-	  // then simply note them with one argument on 'this.setState'
+ 		this.videoSearch('surfboards');
+	}
 
-   		YTSEARCH({ key: API_KEY, term: 'surfboards'}, videos => {
+	// 	YTSEARCH({ key: API_KEY, term: 'surfboards'}, function(videos) {
+	// 	this.setState({ videos: videos });
+	// });
+
+  // Notice above how we're using function(data), that's not the ES6 way
+  // See below for the new syntax sugar with the fat arrow
+  // Also note that if the keys and the values are the same strings
+  // then simply note them with one argument on 'this.setState
+
+  // YTSEARCH was moved out of the component and into a new argument
+
+	videoSearch(term) {
+		 YTSEARCH({ key: API_KEY, term: 'term'}, (videos) => {
 		 		this.setState({ 
 		 			videos: videos,
 		 			selectedVideo: videos[0] 
@@ -37,7 +42,7 @@ class  App extends Component {
 	render() {
 		return (
 			<div>
-				<SearchBar />
+				<SearchBar onSearchTermChange={term => this.videoSearch(term)} />
 				<VideoDetail video={this.state.selectedVideo} />
 				<VideoList 
 					onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
@@ -49,3 +54,4 @@ class  App extends Component {
 
 // Take this componet's generated HTML and render it in the DOM
 ReactDOM.render(<App />, document.querySelector('.container')); 
+

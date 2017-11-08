@@ -13,12 +13,18 @@ import React from 'react';
 //
 
 // ES6: Since we know there's a video property
-// then we can simply pass it as a single argument
-// and return the element... see below
+// we can simply pass it as a single parameter
+// and return the element; which means...
+// const VideoListItem = (props) => {  <<< this... 
+// 	const video = props.video; <<< and this...
+// 	return <li>Video</li>
+// }:
+// ... can replace props, with this parameter: ({video}) => {...}
+// ... see below:
 
 const VideoListItem = ({video, onVideoSelect}) => {
 	const imageUrl = video.snippet.thumbnails.default.url;
-  //console.log(video);
+  console.log(video);
 	
 	return (
 		<li onClick={() => onVideoSelect(video)} className="list-group-item">
@@ -26,6 +32,7 @@ const VideoListItem = ({video, onVideoSelect}) => {
 				<div className="media-left">
 					<img className="media-object" src={imageUrl} />
 				</div>
+				
 				<div className="media-body">
 					<div className="media-heading">{video.snippet.title}</div>
 				</div>
@@ -35,3 +42,4 @@ const VideoListItem = ({video, onVideoSelect}) => {
 };
 
 export default VideoListItem;
+

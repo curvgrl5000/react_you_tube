@@ -1,6 +1,8 @@
 import React from 'react';
 
 const VideoDetail = ({video}) => {
+	// this if statement makes sure there is something
+	// to render if nothing is provided by the Parent component
 	if (!video) {
 		return <div>Loading...</div>;
 	}
