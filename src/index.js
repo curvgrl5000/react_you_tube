@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-DOM';
 import YTSEARCH from 'youtube-api-search';
@@ -31,7 +32,7 @@ class App extends Component {
   // YTSEARCH was moved out of the component and into a new argument
 
 	videoSearch(term) {
-		 YTSEARCH({ key: API_KEY, term: 'term'}, (videos) => {
+		 YTSEARCH({ key: API_KEY, term: term}, (videos) => {
 		 		this.setState({ 
 		 			videos: videos,
 		 			selectedVideo: videos[0] 
@@ -40,9 +41,11 @@ class App extends Component {
 	}
 
 	render() {
+		const videoSearch =_.debounce((term) => { this.videoSearch(term) }, 300);
+
 		return (
 			<div>
-				<SearchBar onSearchTermChange={term => this.videoSearch(term)} />
+				<SearchBar onSearchTermChange={videoSearch} />
 				<VideoDetail video={this.state.selectedVideo} />
 				<VideoList 
 					onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
