@@ -31,8 +31,10 @@ class SearchBar extends Component {
 		return (
 			<div className="search-bar">
 				<input
-					value={this.state.term} 
-					onChange={event => this.onInputChange(event.target.value)} /> 
+					value={this.state.term}
+					placeholder="surfing the big waves" 
+					onChange={event => this.onInputChange(event.target.value)} />
+				<h2 className="search">SEARCH</h2> 
 			</div>
 		);
 	}
