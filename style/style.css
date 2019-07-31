@@ -11,6 +11,10 @@ h2 {
   color: #fce961;
 }
 
+.loading {
+	padding: 1rem;
+}
+
 .container {
   background-color: #e2e0e1;
   margin: 45px auto;

@@ -4,7 +4,7 @@ const VideoDetail = ({video}) => {
 	// this if statement makes sure there is something
 	// to render if nothing is provided by the Parent component
 	if (!video) {
-		return <div>Loading...</div>;
+		return <div className="loading">Its loading or our free quota expired! Dang!!</div>;
 	}
 
 	const videoId = video.id.videoId;
