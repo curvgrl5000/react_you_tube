@@ -17,7 +17,7 @@ class App extends Component {
  			selectedVideo: null 
  		};
 
- 		this.videoSearch('surfing the big waves');
+ 		this.videoSearch('wolff olins oi');
 	}
 
 	// 	YTSEARCH({ key: API_KEY, term: 'surfboards'}, function(videos) {
