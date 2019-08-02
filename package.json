@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Search YouTube with Redux with React and Babel support",
   "main": "index.js",
-  "homepage": "",
+  "homepage": "https://curvgrl5000.github.io/react_you_tube/",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
@@ -12,6 +12,7 @@
   "author": "Anna Mendoza",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.2.1",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
