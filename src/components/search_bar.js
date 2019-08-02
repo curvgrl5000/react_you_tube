@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-// Here's the ES6 version
 class SearchBar extends Component {
 	constructor(props) {
 		super(props);  // calling the parentMethod as Inheritance 
@@ -12,6 +11,7 @@ class SearchBar extends Component {
 		return (
 			<div className="search-bar">
 				<input
+					className="col-md-5"
 					value={this.state.term}
 					placeholder="the static logo is dead" 
 					onChange={event => this.onInputChange(event.target.value)} />

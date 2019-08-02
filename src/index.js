@@ -11,7 +11,6 @@ import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 
 
-// ES6 syntax of a CLASS BASED component example, was a Functional Component:
 class App extends Component {
 	constructor(props) {
  		super(props);
@@ -43,15 +42,7 @@ class App extends Component {
 				<VideoList 
 					onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
 					videos={this.state.videos} />
-
-
-
-
 				<Footer />
-
-
-
-
 			</div>
 		);
 	}
