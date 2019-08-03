@@ -1,7 +1,7 @@
 {
   "name": "redux-search",
   "version": "1.0.0",
-  "description": "Search YouTube with Redux with React and Babel support",
+  "description": "",
   "main": "index.js",
   "homepage": "https://curvgrl5000.github.io/react_you_tube/",
   "scripts": {
@@ -39,13 +39,16 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "css-loader": "^3.1.0",
     "gh-pages": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.15",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "4.3.0",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
+    "style-loader": "^0.23.1",
     "youtube-api-search": "0.0.5"
   }
 }
