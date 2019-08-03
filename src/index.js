@@ -7,7 +7,7 @@ import Footer from './components/footer';
 import API_KEY from '../config.js';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
-
+import "./style/style.css";
 
 class App extends Component {
 	constructor(props) {
