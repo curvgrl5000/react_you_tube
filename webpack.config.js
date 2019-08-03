@@ -8,7 +8,8 @@ module.exports = {
   ],
   output: {
     path: __dirname + '/build',
-    publicPath: '/',
+    // publicPath: '/', // for dev
+    publicPath: '/react_you_tube', // for prod
     filename: './build/bundle.js'
   },
   module: {
