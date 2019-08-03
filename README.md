@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# ReactYouTube Prototype
 
 ### Getting Started
 
