@@ -13,7 +13,7 @@ class SearchBar extends Component {
 				<input
 					className="col-md-5"
 					value={this.state.term}
-					placeholder="the static logo is dead" 
+					placeholder="the static logo..." 
 					onChange={event => this.onInputChange(event.target.value)} />
 				<h2 className="search">SEARCH</h2> 
 			</div>
