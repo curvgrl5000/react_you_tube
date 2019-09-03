@@ -7,7 +7,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="search-bar curve_detail flex-grid-halves">
+      <div className="col-lg-12 search-bar curve_detail flex-grid-halves">
         <div className="col">
           <h4 className="info">© 2019 curve</h4>
         </div>
